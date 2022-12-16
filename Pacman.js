@@ -3,7 +3,7 @@ var rc;
 var cnt = 100;
 let fin = 0;
 let factor = 1;
-var prev_dir = 'ArrowRight';
+var prev_dir = 'd';
 var t = 0;
 let program;
 let border;
@@ -117,7 +117,7 @@ function boundary_check() {
 
 function key_pressed(x) {
     boundary_check();
-    if (x == 'ArrowLeft') {
+    if (x == 'a') {
         cx -= 0.01;
         // if (valid_move(cx + r, cy + r) == 0 && valid_move(cx - r, cy + r) == 0 && valid_move(cx + r, cy - r) == 0 && valid_move(cx - r, cy - r) == 0) {} else {
         //     cx += 0.01;
@@ -131,7 +131,7 @@ function key_pressed(x) {
             theta1 = theta_b;
         }
         // render();
-    } else if (x == 'ArrowRight') {
+    } else if (x == 'd') {
         cx += 0.01;
         // if (valid_move(cx + r, cy + r) == 0 && valid_move(cx - r, cy + r) == 0 && valid_move(cx + r, cy - r) == 0 && valid_move(cx - r, cy - r) == 0) {
         //     cx -= 0.01
@@ -144,7 +144,7 @@ function key_pressed(x) {
             theta2 = theta_ll;
             theta_b = 0;
         }
-    } else if (x == 'ArrowUp') {
+    } else if (x == 'w') {
         cy += 0.01;
         // if (valid_move(cx + r, cy + r) == 0 && valid_move(cx - r, cy + r) == 0 && valid_move(cx + r, cy - r) == 0 && valid_move(cx - r, cy - r) == 0) {
         //     cy -= 0.01;
@@ -159,7 +159,7 @@ function key_pressed(x) {
         }
 
         // render();
-    } else if (x == 'ArrowDown') {
+    } else if (x == 's') {
         cy -= 0.01;
         // if (valid_move(cx + r, cy + r) == 0 && valid_move(cx - r, cy + r) == 0 && valid_move(cx + r, cy - r) == 0 && valid_move(cx - r, cy - r) == 0) {
         //     cy += 0.01;
@@ -469,13 +469,13 @@ function render() {
             points.push(pacman[i]);
         }
     } else {
-        if (prev_dir == "ArrowRight") {
+        if (prev_dir == "d") {
             cx -= 0.01;
-        } else if (prev_dir == "ArrowLeft") {
+        } else if (prev_dir == "a") {
             cx += 0.01;
-        } else if (prev_dir == "ArrowUp") {
+        } else if (prev_dir == "w") {
             cy -= 0.01;
-        } else if (prev_dir == "ArrowDown") {
+        } else if (prev_dir == "s") {
             cy += 0.01;
         }
         pacman = [
